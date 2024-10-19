@@ -141,7 +141,10 @@ import readline from "readline/promises";
         start: ["redirect"],
         // finish: {
         //   method: "redirect",
-        //   uri: "https://example.com", // This is where you can (optionally) redirect a user to after going through interaction.
+        //   // This is where you can (optionally) redirect a user to after going through interaction.
+        //   // Keep in mind, you will need to parse the interact_ref in the resulting interaction URL,
+        //   // and pass it into the grant continuation request.
+        //   uri: "https://example.com",
         //   nonce: crypto.randomUUID(),
         // },
       },
