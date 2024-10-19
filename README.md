@@ -10,7 +10,7 @@ The script then finalizes the grant (after it's accepted interactively via the b
 
 1. Make sure you have NodeJS installed
 2. Run `npm install`
-3. Get a private key, client wallet address and keyId from the [test wallet](https://rafiki.money), and add them in the script.
+3. Get a private key, client wallet address and keyId from the [test wallet](https://wallet.interledger-test.dev/), and add them in the script.
 4. Pick a receiving wallet address, and a sending wallet address.
 5. Run `node index.js`
 6. Click on the outputted URL, to accept the outgoing payment grant.
