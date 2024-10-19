@@ -17,16 +17,16 @@ import readline from "readline/promises";
 
 (async () => {
   const client = await createAuthenticatedClient({
-    walletAddressUrl: "",
+    walletAddressUrl: "", // Make sure the wallet address starts with https:// (not $), and has no trailing slashes
+    privateKey: "private.key",
     keyId: "",
-    privateKey: "",
   });
 
   const sendingWalletAddress = await client.walletAddress.get({
-    url: "",
+    url: "", // Make sure the wallet address starts with https:// (not $)
   });
   const receivingWalletAddress = await client.walletAddress.get({
-    url: "",
+    url: "", // Make sure the wallet address starts with https:// (not $)
   });
 
   console.log(
@@ -125,9 +125,13 @@ import readline from "readline/promises";
         access: [
           {
             type: "outgoing-payment",
-            actions: ["create"],
+            actions: ["read", "create"],
             limits: {
-              debitAmount: quote.debitAmount,
+              debitAmount: {
+                assetCode: quote.debitAmount.assetCode,
+                assetScale: quote.debitAmount.assetScale,
+                value: quote.debitAmount.value,
+              },
             },
             identifier: sendingWalletAddress.id,
           },
@@ -135,6 +139,11 @@ import readline from "readline/promises";
       },
       interact: {
         start: ["redirect"],
+        // finish: {
+        //   method: "redirect",
+        //   uri: "https://example.com", // This is where you can (optionally) redirect a user to after going through interaction.
+        //   nonce: crypto.randomUUID(),
+        // },
       },
     }
   );
