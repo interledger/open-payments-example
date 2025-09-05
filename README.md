@@ -1,5 +1,5 @@
-> [!NOTE]
-> This repository is archived. You can find the updated peer-to-peer payment example for the Open Payment Node client at the [open-payments-node](https://github.com/interledger/open-payments-node/tree/main/examples/peer-to-peer) repository.
+> [!WARNING]
+> This repository is archived. You can find the updated peer-to-peer payment example for the Open Payments Node client at the [open-payments-node](https://github.com/interledger/open-payments-node/tree/main/examples/peer-to-peer) repository.
 
 # Open Payments Example
 
